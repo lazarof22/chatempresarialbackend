@@ -49,3 +49,7 @@ export const logout = (req, res) => {
     res.clearCookie("token", "", { expires: new Date(0) });
     return res.status(200).json({ message: "Sesion finalizada exitosamente" });
 };
+
+export const profile = (req, res) => {
+    res.send('profile')
+}
