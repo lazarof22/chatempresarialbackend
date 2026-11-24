@@ -50,6 +50,7 @@ export const logout = (req, res) => {
     return res.status(200).json({ message: "Sesion finalizada exitosamente" });
 };
 
-export const profile = (req, res) => {
-    res.send('profile')
+export const profile = async (req, res) => {
+    const userFound = await User.findById(req.user.id)
+    if (!userFound) return res.status(400).json({ message: 'Usuario no encontrado' });
 }
